@@ -6,6 +6,30 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
   <link rel="stylesheet" href="https://pingendo.com/assets/bootstrap/bootstrap-4.0.0-alpha.6.css" type="text/css"> </head>
 
+  <!--  jQuery -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<!-- Isolated Version of Bootstrap, not needed if your site already uses Bootstrap -->
+<link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />
+
+<!-- Bootstrap Date-Picker Plugin -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+
+  <script>
+    $(document).ready(function(){
+      var date_input=$('input[name="date"]'); //our date input has the name "date"
+      var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+      var options={
+        format: 'mm/dd/yyyy',
+        container: container,
+        todayHighlight: true,
+        autoclose: true,
+      };
+      date_input.datepicker(options);
+    })
+</script>
+  
 <body>
   <nav class="navbar navbar-expand-md navbar-light bg-faded">
     <div class="container"> <a class="navbar-brand" href="#">RECARO ARCHIVE</a> <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,7 +51,7 @@
           <h1 class="pi-item">Add record:<br></h1>
           <form class="">
             <div class="form-group"><label>Department</label><select class="form-control"><option value="0">Please select...</option><option value="1">Quality</option><option value="2">Logistics</option><option value="3">Production</option><option value="4">Purchasing</option><option value="5">Administration</option></select></div>
-            <div class="form-group"><label>Tutaj powinien być date picker</label><input class="form-control" placeholder="Text" type="text"></div>
+            <div class="form-group"><label>Tutaj powinien być date picker</label><input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text"/></div>
             <div class="form-group"><label>Binder Title</label><input class="form-control" placeholder="Text" type="text"></div>
             <div class="form-group"><label>Retention Period (years)</label><select class="form-control"><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></div>
             <div class="form-group"><label>Binder Number</label><input class="form-control" placeholder="Text" value="1/1" type="text"></div>

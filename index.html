@@ -16,16 +16,17 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
 
-  <script>
+<script>
     $(document).ready(function(){
-      var date_input=$('input[name="date"]'); //our date input has the name "date"
-      var options={
-        format: 'mm/dd/yyyy',
-        container: container,
-        todayHighlight: true,
-        autoclose: true,
-      };
-      date_input.datepicker(options);
+        var date_input=$('input[name="date"]'); //our date input has the name "date"
+        var container=$('.bg-faded py-5 form').length>0 ? $('.bg-faded py-5 form').parent() : "body";
+        date_input.datepicker({
+            format: 'dd.mm.yyyy',
+            weekStart: 1,
+            container: container,
+            todayHighlight: true,
+            autoclose: true,
+        })
     })
 </script>
   

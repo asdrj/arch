@@ -16,20 +16,6 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
 
-<script>
-    $(document).ready(function(){
-        var date_input=$('input[name="date"]'); //our date input has the name "date"
-        var container=$('.bg-faded py-5 form').length>0 ? $('.bg-faded py-5 form').parent() : "body";
-        date_input.datepicker({
-            format: 'dd.mm.yyyy',
-            weekStart: 1,
-            container: container,
-            todayHighlight: true,
-            autoclose: true,
-        })
-    })
-</script>
-  
 <body>
   <nav class="navbar navbar-expand-md navbar-light bg-faded">
     <div class="container"> <a class="navbar-brand" href="#">RECARO ARCHIVE</a> <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -62,6 +48,19 @@
   <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
   <script src="https://pingendo.com/assets/bootstrap/bootstrap-4.0.0-alpha.6.min.js"></script>
+  <script>
+    $(document).ready(function(){
+        var date_input=$('input[name="date"]'); //our date input has the name "date"
+        var container=$('.bg-faded py-5 form').length>0 ? $('.bg-faded py-5 form').parent() : "body";
+        date_input.datepicker({
+            format: 'dd.mm.yyyy',
+            weekStart: 1,
+            container: container,
+            todayHighlight: true,
+            autoclose: true,
+        })
+    })
+</script>
 </body>
 
 </html>
